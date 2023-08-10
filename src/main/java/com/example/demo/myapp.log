@@ -1,0 +1,18 @@
+20:16:48.808 WELD-ENV-002001: Weld SE container 704f7bfa-14fc-4b3f-b73c-1da2ae77de64 shut down
+20:18:51.395 WELD-000900: 5.1.0 (Final)
+20:18:51.646 WELD-ENV-000014: Falling back to Java Reflection for bean-discovery-mode="annotated" discovery. Add org.jboss:jandex to the classpath to speed-up startup.
+20:18:51.764 WELD-000101: Transactional services not available. Injection of @Inject UserTransaction not available. Transactional observers will be invoked synchronously.
+20:18:52.408 WELD-ENV-002003: Weld SE container ce848351-419d-4aa3-9b36-9a0ff460d445 initialized
+20:18:56.548 Thu Aug 10 20:18:56 PKT 2023_GET_Error_RecordsFetched
+20:18:56.570 HikariPool-1 - Starting...
+20:18:57.201 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50d8081b
+20:18:57.204 HikariPool-1 - Start completed.
+20:21:10.745 Thu Aug 10 20:21:10 PKT 2023_POST_REQUEST-RECIEVED_InsertRecord
+20:21:10.745 HikariPool-2 - Starting...
+20:21:10.767 HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@74a98843
+20:21:10.767 HikariPool-2 - Start completed.
+20:21:10.767 Thu Aug 10 20:21:10 PKT 2023_POST_Success_RecordInserted
+20:21:22.715 Thu Aug 10 20:21:22 PKT 2023_GET_Error_RecordsFetched
+20:21:22.715 HikariPool-3 - Starting...
+20:21:22.727 HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@76749af8
+20:21:22.727 HikariPool-3 - Start completed.
