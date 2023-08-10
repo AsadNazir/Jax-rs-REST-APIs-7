@@ -17,6 +17,7 @@ public class CustomerResource {
     @Path("/insert")
     public Response insert (@QueryParam("name") String name, @QueryParam("age") int age, @QueryParam("amount")double amount, @QueryParam("city") String city, @QueryParam("gender") String gender) {
 
+
         //Logger
         logger.info(new Date().toString() + "_POST_REQUEST-RECIEVED_InsertRecord");
 
