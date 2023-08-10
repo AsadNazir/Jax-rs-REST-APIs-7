@@ -28,7 +28,9 @@ public class Service {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
 
-            ResultSet rs = Customer.getAll(this.C);
+
+            PreparedStatement ps = this.C.prepareStatement(CustomerSQL.getAllCustomers);
+            ResultSet rs = ps.executeQuery();
 
             // Convert ResultSet to a List<Map<String, Object>>
             List<Map<String, Object>> resultList = new ArrayList<>();
@@ -54,8 +56,8 @@ public class Service {
 
     public boolean deleteRecord(int id) {
         try {
-            String deleteQuery = "DELETE FROM customers WHERE id = ?";
-            try (PreparedStatement preparedStatement = this.C.prepareStatement(deleteQuery)) {
+
+            try (PreparedStatement preparedStatement = this.C.prepareStatement(CustomerSQL.deleteCustomer)) {
                 preparedStatement.setInt(1, id);
                 int rowsAffected = preparedStatement.executeUpdate();
 
@@ -73,8 +75,8 @@ public class Service {
 
     public boolean upadateRecord(int id, Customer C) {
         try {
-            String update = "update customers set name =?, purchaseamount=?, city= ?, age =?, gender= ? where id =?";
-            PreparedStatement ps = this.C.prepareStatement(update);
+
+            PreparedStatement ps = this.C.prepareStatement(CustomerSQL.updateCustomer);
             ps.setString(1, C.getName());
             ps.setDouble(2, C.getPurchaseAmount());
             ps.setString(3, C.getCity());
@@ -91,10 +93,10 @@ public class Service {
         return false;
 
     }
+
     public boolean insertRecord(Customer C) {
         try {
-            String insert = "insert into customers (name, purchaseamount, city, age, gender) values (?, ?,  ?, ?, ?)";
-            PreparedStatement ps = this.C.prepareStatement(insert);
+            PreparedStatement ps = this.C.prepareStatement(CustomerSQL.insertCustomer);
             ps.setString(1, C.getName());
             ps.setDouble(2, C.getPurchaseAmount());
             ps.setString(3, C.getCity());
@@ -110,7 +112,6 @@ public class Service {
         return false;
 
     }
-
 
 
 }
